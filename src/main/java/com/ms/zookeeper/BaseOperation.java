@@ -1,12 +1,11 @@
 package com.ms.zookeeper;
 
 import org.apache.zookeeper.*;
-import org.apache.zookeeper.data.ACL;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-public class Connection {
+public class BaseOperation {
     String connectionURL="127.0.0.1:2181";
     int sessionTimeout=2000;
     ZooKeeper zooKeeper = new ZooKeeper(connectionURL, sessionTimeout, new Watcher() {
@@ -15,7 +14,7 @@ public class Connection {
         }
     });
 
-    public Connection() throws IOException {
+    public BaseOperation() throws IOException {
     }
 
     @Test
